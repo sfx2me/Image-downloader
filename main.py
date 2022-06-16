@@ -1,7 +1,7 @@
 import requests
-web = input("Paste your website link: ")
-r = requests.get(web)
-
-print(r.content)
-with open("output.png", "wb") as f:
+image_url = input("Paste image url: ")
+r = requests.get(image_url)
+filename = image_url.split("/")[-1]
+with open(filename, "wb") as f:
     f.write(r.content)
+print(f"Saved image {file_name}")
